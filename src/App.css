@@ -140,4 +140,8 @@ input[type="checkbox"] {
   .complete{
     width: auto;
   }
+  .todo{
+    padding-inline: 2vh;
+    
+  }
 }
