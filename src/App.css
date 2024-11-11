@@ -1,0 +1,143 @@
+.todo{
+  text-align: center;
+  padding-inline: 10vh;
+  
+}
+h1{
+  color: white;
+}
+
+.form{
+  border-radius: 5px;
+  padding-left: auto;
+  padding-right: auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  
+}
+.submit-btn{
+  font-size: 30px;
+}
+
+.taskpad{
+  width:80%;
+  height: 30px;
+  border: none;
+  outline: none;
+  font-family: 'ADLaM Display';
+  color:rgb(0,128,0);
+  background-color: rgb(255, 255, 255, 0);
+}
+.submit-btn{
+  width:15%;
+  border:none;
+  height: 50px;
+  color:rgb(0,128,0);
+  background-color: rgb(255, 255, 255, 0);
+}
+.taskmanager{
+  display: flex;
+  padding-top: 100px;
+  text-align: center;
+  gap: 50px;
+}
+.taskmanager input{
+  background-color: initial;
+}
+.tasks, .complete{  
+  position: relative;
+  background-color: rgb(255, 255, 255, 0.7);
+  border-radius: 5px;
+  word-wrap: break-word;
+  width: 50%;
+  font-size: large;
+  height: 400px;
+  overflow-y:auto ;
+  
+}
+.tasks h3, .complete h3{
+  position: sticky;
+  top: 0;
+  height: auto;
+  padding: 10px;
+  font-size: x-large;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color:rgb(255, 255, 255, 0.7);
+  margin: 0;
+  
+}
+.tasks::-webkit-scrollbar, .complete::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+.tasks::-webkit-scrollbar-track,.complete::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+.tasks::-webkit-scrollbar-thumb, .complete::-webkit-scrollbar-thumb{
+  background: rgb(0, 110, 255, 0.5); 
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+.tasks::-webkit-scrollbar-thumb:hover, .complete::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 110, 255, 0.9); 
+}
+
+
+
+ul{
+  list-style-type: none;
+  text-align: left;
+}
+
+.delete-btn {
+  display: none;
+  text-align: center;
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer; /* Make sure the cursor is a pointer */
+  float: right; /* Align the button to the right of the list item */
+  padding: 5px;
+  margin-left: 10px; /* Space between the text and the delete button */
+}
+
+/* Define a height for the list items */
+li {
+  height: 50px;
+  position: relative; /* Position delete button relative to li */
+  padding-right: 50px; /* Give some space on the right for the delete button */
+  display: flex;
+  align-items: center;
+}
+
+/* When hovering over a li, show the delete button */
+li:hover .delete-btn {
+  display: block;
+}
+
+/* Style for the label and checkbox for better layout */
+label {
+  display: flex;
+  align-items: center;
+  cursor: pointer; /* Make label clickable */
+  
+}
+input[type="checkbox"] {
+  margin-right: 10px; /* Space between checkbox and text */
+  transform: scale(1.5);
+}
+@media only screen and (max-width: 900px){
+  .taskmanager{
+    flex-direction: column;
+  }
+  .tasks{  
+    width: auto;
+  }
+  .complete{
+    width: auto;
+  }
+}

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=ADLaM Display');
+
+body{
+    background-image: url("hulk.jpg");
+    width: 100%;
+    background-position: center;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    font-family: 'ADLaM Display';
+    color:rgb(0,128,0);
+    overflow-x: hidden;
+}
