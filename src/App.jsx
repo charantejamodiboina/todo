@@ -21,14 +21,21 @@ function Todo(){
   const handlesubmt =(event) => {
     event.preventDefault();
     if(InputVal.trim() !== ''){
-      setaddTask([...addTask, InputVal]);
+      const new_Task ={
+        text:InputVal,
+        createdAt:new Date().toISOString()
+      }
+      setaddTask([...addTask, new_Task]);
       setInputVal('');
     }
   }
   const handleselect =(data) =>{
-    event.preventDefault();
+    const taskcompleted ={
+      ...data,
+      completedAt:new Date().toISOString(),
+    }
     setaddTask(addTask.filter((item) => item!==data));
-    setcompletedTask([...completedTask, data])
+    setcompletedTask([...completedTask, taskcompleted])
   }
   const handleunselect =(data) =>{
     setcompletedTask(completedTask.filter((item) => item!==data));
@@ -60,13 +67,16 @@ function Todo(){
           {addTask.map((data, index) => (
             <li key={index}>
               <label>
+              <div>
                 <input
                 title='checked to completed tasks'
                 type='checkbox'
                 name='addTask'
                 checked={false}
                 onChange={()=> handleselect(data)}/>
-                {data}
+                {data.text}
+                </div>
+                <em>Created at: {new Date(data.createdAt).toLocaleString()}</em>
               </label>
               <button className='delete-btn' onClick={()=> handledelete(data, 'addTask')}>&#x274C;</button>
             </li>
@@ -78,7 +88,7 @@ function Todo(){
         <ul>
         {completedTask.map((item, index) =>
           (<li key={index}>
-            <label>
+            <label><div>
                 <input
                 title='uncheck back to todo tasks '
                 type='checkbox'
@@ -86,7 +96,9 @@ function Todo(){
                 checked={true}
                 onChange={()=> handleunselect(item)}
                 />
-                {item}
+                {item.text}
+                </div>
+                <em>Created at: {new Date(item.createdAt).toLocaleString()}  ||  Completed at: {new Date(item.completedAt).toLocaleString()}</em>
               </label>
               <button className='delete-btn' onClick={()=> handledelete(item, 'completedTask')}>&#x274C;</button>
           </li>))}

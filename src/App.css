@@ -50,7 +50,6 @@ h1{
   word-wrap: break-word;
   width: 50%;
   font-size: large;
-  height: 400px;
   overflow-y:auto ;
   
 }
@@ -65,34 +64,17 @@ h1{
   margin: 0;
   
 }
-.tasks::-webkit-scrollbar, .complete::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-.tasks::-webkit-scrollbar-track,.complete::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 10px;
-}
- 
-/* Handle */
-.tasks::-webkit-scrollbar-thumb, .complete::-webkit-scrollbar-thumb{
-  background: rgb(0, 110, 255, 0.5); 
-  border-radius: 4px;
-}
-
-/* Handle on hover */
-.tasks::-webkit-scrollbar-thumb:hover, .complete::-webkit-scrollbar-thumb:hover {
-  background: rgb(0, 110, 255, 0.9); 
-}
-
-
 
 ul{
   list-style-type: none;
   text-align: left;
 }
-
+em{
+  font-size: x-small;
+  float: left;
+  left:0;
+  color: rgb(5, 5, 5, 0.7);
+}
 .delete-btn {
   display: none;
   text-align: center;
@@ -107,10 +89,11 @@ ul{
 
 /* Define a height for the list items */
 li {
-  height: 50px;
+  /* height: 50px; */
   position: relative; /* Position delete button relative to li */
   padding-right: 50px; /* Give some space on the right for the delete button */
   display: flex;
+  padding-bottom: 10px;
   align-items: center;
 }
 
@@ -121,7 +104,7 @@ li:hover .delete-btn {
 
 /* Style for the label and checkbox for better layout */
 label {
-  display: flex;
+  display: block;
   align-items: center;
   cursor: pointer; /* Make label clickable */
   
