@@ -51,7 +51,11 @@ h1{
   width: 50%;
   font-size: large;
   overflow-y:auto ;
-  
+}
+.complete li{
+  text-decoration: line-through;
+  text-decoration-color:red;
+  text-decoration-thickness: 2px;
 }
 .tasks h3, .complete h3{
   position: sticky;
